@@ -1,6 +1,6 @@
 from save_image import *
 from dotenv import load_dotenv
-
+import os
 
 def fetch_nasa_apod():
     load_dotenv()
@@ -23,3 +23,4 @@ def fetch_nasa_apod():
 
 
 fetch_nasa_apod()
+
