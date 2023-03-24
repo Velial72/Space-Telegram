@@ -1,6 +1,7 @@
 from save_image import *
 import argparse
 import sys
+import os
 
 
 def fetch_spacex_last_launch():
