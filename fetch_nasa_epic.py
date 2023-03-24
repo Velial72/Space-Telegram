@@ -1,5 +1,6 @@
 from save_image import *
 from dotenv import load_dotenv
+import os
 
 
 def fetch_nasa_epic():
