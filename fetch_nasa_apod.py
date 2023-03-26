@@ -13,7 +13,7 @@ def fetch_nasa_apod():
     response = requests.get('https://api.nasa.gov/planetary/apod', params=payload)
     response.raise_for_status()
 
-    if os.path.exists('images/'):
+    if os.path.exists('images'):
         pass
     else:
         os.mkdir('images')
