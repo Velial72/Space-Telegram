@@ -2,6 +2,7 @@ import os
 from save_image import save_image
 import requests
 import datetime
+from dotenv import load_dotenv
 
 
 def fetch_nasa_epic(token):
@@ -25,3 +26,9 @@ def fetch_nasa_epic(token):
         endpoint = api_epic.url
 
         save_image(endpoint, folder_path, filename, name_count)
+        
+
+if __name__ == '__main__':
+    load_dotenv()
+    token = os.environ['NASA_TOKEN']
+    fetch_nasa_epic(token)
