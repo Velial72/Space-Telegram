@@ -9,7 +9,7 @@ import time
 if __name__ == '__main__':
     load_dotenv()
     parser = argparse.ArgumentParser(description='Введите: ID канала телеграм')
-    parser.add_argument('id_telegram', nargs='?', help='ID канала')
+    parser.add_argument('telegram_id', nargs='?', help='ID канала', default='@space464')
     entered_values = parser.parse_args()
     while True:
         load_dotenv()
@@ -23,6 +23,6 @@ if __name__ == '__main__':
             for image in images:
                 path_to_image = os.path.join(root, image)
                 with open(path_to_image, 'rb') as file:
-                    bot.send_document(chat_id=entered_values.id_telegram, document=(file), timeout=60)
+                    bot.send_document(chat_id=entered_values.telegram_id, document=(file), timeout=60)
                 time.sleep(int(rate))
             random.shuffle(images)
