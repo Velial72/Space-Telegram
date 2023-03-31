@@ -21,6 +21,7 @@ def fetch_nasa_epic(token):
 
         api_epic = requests.get(f'https://api.nasa.gov/EPIC/archive/natural/{formatted_date}/png/{info_image}.png',
                                 params=payload)
+        api_epic.raise_for_status()
         endpoint = api_epic.url
 
         save_image(endpoint, folder_path, filename, name_count)
