@@ -13,7 +13,7 @@ if __name__ == '__main__':
     entered_values = parser.parse_args()
     while True:
         load_dotenv()
-        token = os.getenv('TG_TOKEN')
+        token = os.environ('TG_TOKEN')
         rate = os.getenv('RATE_OF_PUBLICATION')
         folder_path = os.path.join('images')
         bot = telegram.Bot(token=token)
