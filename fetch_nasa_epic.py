@@ -9,6 +9,7 @@ def fetch_nasa_epic(token):
     payload = {"api_key": token}
     folder_path = os.path.join('images')
     response = requests.get('https://api.nasa.gov/EPIC/api/natural/image', params=payload, timeout=60)
+    response.raise_for_status()
     os.makedirs('images', exist_ok=True)
 
     today = datetime.date.today()
