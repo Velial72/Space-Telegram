@@ -1,7 +1,7 @@
 import os
 from save_image import save_image, check_the_extension
 import requests
-
+from dotenv import load_dotenv
 
 def fetch_nasa_apod(token):
     filename = 'nasa'
@@ -17,3 +17,8 @@ def fetch_nasa_apod(token):
     if file_extension == '.jpg':
         save_image(response.json()['url'], folder_path, filename, name_count)
 
+
+if __name__ == '__main__':
+    load_dotenv()
+    token = os.environ['NASA_TOKEN']
+    fetch_nasa_apod(token)
