@@ -12,6 +12,6 @@ def save_image(url, path, filename, name_count):
 
 def check_the_extension(url):
 
-    api_file = urllib.parse.urlsplit(url)[2]
-    extension = os.path.splitext(api_file)[1]
+    link_to_the_image = urllib.parse.urlsplit(url)[2]
+    extension = os.path.splitext(link_to_the_image)[1]
     return extension
