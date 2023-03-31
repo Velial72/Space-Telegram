@@ -1,6 +1,7 @@
 import requests
 import os
 from save_image import save_image
+import argparse
 
 
 def fetch_spacex_last_launch(entered_values):
@@ -17,3 +18,11 @@ def fetch_spacex_last_launch(entered_values):
     for url_image in images:
         name_count = len(os.listdir(folder_path))
         save_image(url_image, folder_path, filename, name_count)
+       
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Введите ID последнего запуска')
+    parser.add_argument('launch_id', nargs='?', help='ID запуска', default='latest')
+    entered_values = parser.parse_args()
+
+    fetch_spacex_last_launch(entered_values.launch_id)
