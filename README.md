@@ -36,11 +36,11 @@ main.py
 
 Перед запуском необходимо создать файл `.env` и внести в него переменные:
 
-'NASA_TOKEN' с вашим кодом авторизации на сайте [nasa.gov](https://api.nasa.gov) 
+`NASA_TOKEN` с вашим кодом авторизации на сайте [nasa.gov](https://api.nasa.gov) 
 
-'TG_TOKEN' с вашим токеном телеграмм-бота, обращаться к [BotFather](https://telegram.me/BotFather)
+`TG_TOKEN` с вашим токеном телеграмм-бота, обращаться к [BotFather](https://telegram.me/BotFather)
 
-'RATE_OF_PUBLICATION' для установки частоты публикаций (в секундах)
+`RATE_OF_PUBLICATION` для установки частоты публикаций (в секундах)
 
 ### Цель проекта
 
