@@ -13,7 +13,7 @@ if __name__ == '__main__':
     parser.add_argument('rate', nargs='?', help='частота публикаций', default='14400')
     entered_values = parser.parse_args()
     while True:
-        token = os.environ('TG_TOKEN')
+        token = os.environ['TG_TOKEN']
         folder_path = os.path.join('images')
         bot = telegram.Bot(token=token)
         tree = os.walk('images')
