@@ -1,5 +1,5 @@
 import os
-from save_image import save_image, check_the_extension
+from save_image import save_image, get_an_extension
 import requests
 from dotenv import load_dotenv
 
