@@ -12,10 +12,11 @@ def fetch_nasa_apod(token):
 
     response = requests.get('https://api.nasa.gov/planetary/apod', params=payload, timeout=60)
     response.raise_for_status()
-    file_extension = get_an_extension(response.json()['url'])
+    image_url = response.json()['url']
+    file_extension = get_an_extension(image_url)
 
     if file_extension == '.jpg':
-        save_image(response.json()['url'], folder_path, filename, name_count)
+        save_image(image_url, folder_path, filename, name_count)
 
 
 if __name__ == '__main__':
