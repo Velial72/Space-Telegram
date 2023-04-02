@@ -26,6 +26,7 @@ if __name__ == '__main__':
                         bot.send_document(chat_id=entered_values.telegram_id, document=file, timeout=60)
                         time.sleep(int(entered_values.rate))
                 random.shuffle(images)
-        except telegram.error.NetworkError() as error:
+                telegram.error.NetworkError()
+        except Exception as error:
             logging.error(error)
             time.sleep(5)
