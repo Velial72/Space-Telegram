@@ -15,9 +15,9 @@ def fetch_spacex_last_launch(entered_values):
     os.makedirs('images', exist_ok=True)
     images = response.json()['links']['flickr']['original']
 
-    for url_image in images:
+    for image_url in images:
         name_count = len(os.listdir(folder_path))
-        save_image(url_image, folder_path, filename, name_count)
+        save_image(image_url, folder_path, filename, name_count)
        
 
 if __name__ == '__main__':
