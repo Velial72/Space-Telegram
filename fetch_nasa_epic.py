@@ -23,8 +23,9 @@ if __name__ == '__main__':
     formatted_date = date_of_image.strftime("%Y/%m/%d")
     for name_image in fetch_nasa_epic(token, payload):
         name_count = len(os.listdir(folder_path))
-        info_image = name_image['image']
-        api_epic = requests.get(f'https://api.nasa.gov/EPIC/archive/natural/{formatted_date}/png/{info_image}.png',
+        image_info = name_image['image']
+        epic_api = requests.get(f'https://api.nasa.gov/EPIC/archive/natural/{formatted_date}/png/{image_info}.png',
                                 params=payload)
-        endpoint = api_epic.url
+        epic_api.raise_for_status()
+        endpoint = epic_api.url
         save_image(endpoint, folder_path, filename, name_count)
