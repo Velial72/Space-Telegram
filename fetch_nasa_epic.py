@@ -5,7 +5,7 @@ import datetime
 from dotenv import load_dotenv
 
 
-def fetch_nasa_epic(token):
+def fetch_nasa_epic(token, payload):
     response = requests.get('https://api.nasa.gov/EPIC/api/natural/image', params=payload, timeout=60)
     response.raise_for_status()
     return response.json()
