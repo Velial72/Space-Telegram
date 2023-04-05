@@ -13,13 +13,13 @@ if __name__ == '__main__':
     parser.add_argument('rate', nargs='?', type=int, help='частота публикаций', default='14400')
     entered_values = parser.parse_args()
     while True:
-        try:
-            token = os.environ['TG_TOKEN']
-            chat_id = os.environ['TG_CHAT_ID']
-            folder_path = os.path.join('images')
-            bot = telegram.Bot(token=token)
-            tree = os.walk('images')
-            
+        token = os.environ['TG_TOKEN']
+        chat_id = os.environ['TG_CHAT_ID']
+        folder_path = os.path.join('images')
+        bot = telegram.Bot(token=token)
+        tree = os.walk('images')
+        
+        try:            
             for root, catalog, images in tree:
                 for image in images:
                     path_to_image = os.path.join(root, image)
@@ -27,7 +27,7 @@ if __name__ == '__main__':
                         bot.send_document(chat_id=chat_id, document=file, timeout=60)
                         time.sleep(entered_values.rate)
                 random.shuffle(images)
-                telegram.error.NetworkError()
-        except Exception as error:
-            logging.error(error)
+                
+        except telegram.error.NetworkError:
+            logging.error(telegram.error.NetworkError)
             time.sleep(5)
