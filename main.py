@@ -14,7 +14,7 @@ if __name__ == '__main__':
     while True:
         try:
             token = os.environ['TG_TOKEN']
-            chat_id = os.environ['CHAT_ID']
+            chat_id = os.environ['TG_CHAT_ID']
             folder_path = os.path.join('images')
             bot = telegram.Bot(token=token)
             tree = os.walk('images')
