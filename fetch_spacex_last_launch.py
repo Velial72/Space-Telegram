@@ -5,7 +5,7 @@ import argparse
 
 
 def fetch_spacex_last_launch(launch_id):
-    api_space = f'https://api.spacexdata.com/v5/launches/{entered_values}'
+    api_space = f'https://api.spacexdata.com/v5/launches/{launch_id}'
     filename = 'space'
     folder_path = os.path.join('images')
 
