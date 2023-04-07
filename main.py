@@ -18,16 +18,17 @@ if __name__ == '__main__':
         folder_path = os.path.join('images')
         bot = telegram.Bot(token=token)
         tree = os.walk('images')
-        
-        try:            
-            for root, catalog, images in tree:
-                for image in images:
-                    path_to_image = os.path.join(root, image)
-                    with open(path_to_image, 'rb') as file:
+                   
+        for root, catalog, images in tree:
+            for image in images:
+                path_to_image = os.path.join(root, image)
+                with open(path_to_image, 'rb') as file:
+                    try: 
                         bot.send_document(chat_id=chat_id, document=file, timeout=60)
                         time.sleep(entered_values.rate)
+                    except telegram.error.NetworkError:
+                        logging.error(telegram.error.NetworkError)
+                        time.sleep(5)    
                 random.shuffle(images)
                 
-        except telegram.error.NetworkError:
-            logging.error(telegram.error.NetworkError)
-            time.sleep(5)
+
