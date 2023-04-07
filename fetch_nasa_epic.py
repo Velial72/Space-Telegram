@@ -5,7 +5,7 @@ import datetime
 from dotenv import load_dotenv
 
 
-def fetch_nasa_epic(token, payload):
+def fetch_nasa_epic(payload):
     response = requests.get('https://api.nasa.gov/EPIC/api/natural/image', params=payload, timeout=60)
     response.raise_for_status()
     return response.json()
@@ -21,7 +21,7 @@ if __name__ == '__main__':
     today = datetime.date.today()
     date_of_image = today - datetime.timedelta(days=1)
     formatted_date = date_of_image.strftime("%Y/%m/%d")
-    for name_image in fetch_nasa_epic(token, payload):
+    for name_image in fetch_nasa_epic(payload):
         name_count = len(os.listdir(folder_path))
         image_info = name_image['image']
         epic_api = requests.get(f'https://api.nasa.gov/EPIC/archive/natural/{formatted_date}/png/{image_info}.png',
