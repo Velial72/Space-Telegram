@@ -16,22 +16,22 @@ pip install -r requiriments.txt
 
 запуск 
 ```
-python3 apod.py
+python3 fetch_nasa_apod.py
 ```
 
 запуск 
 ```
-fetch_epic.py
+python3 fetch_nasa_epic.py
 ```
 
 запуск 
 ```
-space.py -h
+python3 fetch_spacex_last_launch.py
 ```
 
 запуск 
 ```
-main.py
+python3 main.py
 ```
 
 ### Настройка окружения
@@ -46,5 +46,5 @@ main.py
 
 ### Цель проекта
 
-Проект написан в образовательных целях на онлайн-курсе для веб-разработчиков dvmn.org.
+Проект написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
 
