@@ -3,6 +3,7 @@ from save_image import save_image
 import requests
 import datetime
 from dotenv import load_dotenv
+import argparse
 
 
 def fetch_nasa_epic(payload):
